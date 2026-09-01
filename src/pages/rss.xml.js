@@ -1,16 +1,19 @@
-import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-	const posts = await getCollection("blog");
-	return rss({
-		title: SITE_TITLE,
-		description: SITE_DESCRIPTION,
-		site: context.site,
-		items: posts.map((post) => ({
-			...post.data,
-			link: `/blog/${post.id}/`,
-		})),
-	});
+  const blog = await getCollection('blog');
+  const site = context.site || 'https://carrera-cinturon-verde-cordoba.vercel.app';
+
+  return rss({
+    title: 'Carrera Cinturón Verde de Córdoba',
+    description: 'Noticias, guías y consejos sobre Trail Running y BTT en la Sierra de Córdoba.',
+    site: site,
+    items: blog.map((post) => ({
+      title: post.data.title,
+      pubDate: new Date(post.data.pubDate),
+      description: post.data.description,
+      link: `/blog/${post.slug}/`,
+    })),
+  });
 }

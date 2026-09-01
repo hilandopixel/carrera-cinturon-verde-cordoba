@@ -5,9 +5,10 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.coerce.date(), 
+    pubDate: z.string(),
     author: z.string().optional(),
     cover: z.string().optional(),
+    coverAlt: z.string().default('Imagen de la Carrera Cinturón Verde'),
   }),
 });
 
