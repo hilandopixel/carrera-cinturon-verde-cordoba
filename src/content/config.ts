@@ -5,10 +5,9 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.string(),
+    pubDate: z.coerce.date(), 
     author: z.string().optional(),
-    cover: z.string().optional(), // Ahora es opcional
-    coverAlt: z.string().default('Imagen del artículo'),
+    cover: z.string().optional(),
   }),
 });
 
