@@ -2,5 +2,21 @@ backend:
   name: github
   repo: hilandopixel/carrera-cinturon-verde-cordoba
   branch: main
-  base_url: https://carreracinturonverdecordoba.vercel.app
-  auth_endpoint: /api/auth
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Artículos del Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción SEO", name: "description", widget: "text" }
+      - { label: "Fecha de Publicación", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", timeFormat: false }
+      - { label: "Autor", name: "author", widget: "string", default: "Equipo Cinturón Verde", required: false }
+      - { label: "Imagen de Portada", name: "cover", widget: "image", required: false }
+      - { label: "Texto Alternativo Imagen", name: "coverAlt", widget: "string", default: "Imagen del artículo", required: false }
+      - { label: "Cuerpo del Artículo", name: "body", widget: "markdown" }
