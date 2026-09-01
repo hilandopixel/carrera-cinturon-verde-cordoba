@@ -7,7 +7,7 @@ const blog = defineCollection({
     description: z.string(),
     pubDate: z.string(),
     author: z.string().optional(),
-    cover: z.string(), // Imagen principal de portada
+    cover: z.string().optional(), // Ahora es opcional
     coverAlt: z.string().default('Imagen del artículo'),
   }),
 });
