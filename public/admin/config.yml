@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: tu-usuario/tu-repositorio # Reemplaza con tu usuario y repo real de GitHub
+  repo: hilandopixel/carrera-cinturon-verde-cordoba
   branch: main
-  base_url: https://carreracinturonverdecordoba.vercel.app # Tu dominio en Vercel
+  base_url: https://carreracinturonverdecordoba.vercel.app
   auth_endpoint: /api/auth
