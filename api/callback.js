@@ -1,8 +1,5 @@
-export const prerender = false;
-
-export async function GET({ request }) {
-  const url = new URL(request.url);
-  const code = url.searchParams.get('code');
+export default async function handler(req, res) {
+  const code = req.query.code;
 
   const response = await fetch('https://github.com/login/oauth/access_token', {
     method: 'POST',
@@ -39,10 +36,6 @@ export async function GET({ request }) {
     </html>
   `;
 
-  return new Response(html, {
-    status: 200,
-    headers: {
-      'Content-Type': 'text/html; charset=utf-8',
-    },
-  });
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.status(200).send(html);
 }
