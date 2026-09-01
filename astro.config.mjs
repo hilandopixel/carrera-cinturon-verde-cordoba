@@ -2,12 +2,9 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
-const siteUrl = process.env.VERCEL_URL 
-  ? `https://${process.env.VERCEL_URL}` 
-  : 'https://carreracinturonverdecordoba.vercel.app';
-
 export default defineConfig({
-  site: siteUrl,
+  // URL canónica fija necesaria para que @astrojs/sitemap no falle en el primer build
+  site: 'https://carreracinturonverdecordoba.vercel.app',
   integrations: [
     tailwind(),
     sitemap()
