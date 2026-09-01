@@ -1,21 +1,6 @@
 backend:
-  name: git-gateway
-  branch: main # O 'master', según el nombre de tu rama principal en GitHub
-
-media_folder: "public/images/uploads" # Dónde se guardarán las imágenes subidas
-public_folder: "/images/uploads"     # Ruta pública para las imágenes en el Markdown
-
-collections:
-  - name: "blog"
-    label: "Artículos del Blog"
-    folder: "src/content/blog"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Descripción SEO", name: "description", widget: "text" }
-      - { label: "Fecha de Publicación", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", timeFormat: false }
-      - { label: "Autor", name: "author", widget: "string", default: "Equipo Cinturón Verde", required: false }
-      - { label: "Imagen de Portada (URL o Subida)", name: "cover", widget: "image", required: false }
-      - { label: "Texto Alternativo de Imagen", name: "coverAlt", widget: "string", default: "Imagen del artículo", required: false }
-      - { label: "Cuerpo del Artículo", name: "body", widget: "markdown" }
+  name: github
+  repo: tu-usuario/tu-repositorio # Reemplaza con tu usuario y repo real de GitHub
+  branch: main
+  base_url: https://carreracinturonverdecordoba.vercel.app # Tu dominio en Vercel
+  auth_endpoint: /api/auth
