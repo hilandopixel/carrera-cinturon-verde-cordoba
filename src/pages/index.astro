@@ -11,8 +11,8 @@ posts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDat
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carrera Cinturón Verde de Córdoba | Trail Running y MTB</title>
-  <meta name="description" content="Sitio oficial con artículos, consejos de preparación y novedades sobre la Carrera Cinturón Verde de Córdoba." />
+  <title>Carrera Cinturón Verde de Córdoba | Trail Running | Bike | Senderismo </title>
+  <meta name="description" content="Carrera Cinturón Verde de Córdoba." />
 </head>
 <body class="min-h-screen flex flex-col bg-stone-50">
 
@@ -35,44 +35,20 @@ posts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDat
   <!-- Main Content -->
   <main id="articulos" class="flex-grow max-w-6xl mx-auto px-6 py-16 w-full">
     <h2 class="text-3xl font-extrabold text-emerald-950 mb-10 border-b-2 border-emerald-600 pb-3 inline-block">
-      Últimos Artículos y Guías
+      La ruta que conecta los Parques de Córdoba con la Sierra
     </h2>
-
-    <div class="grid gap-10 md:grid-cols-2">
-      {posts.map((post) => (
-        <article class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-emerald-100 overflow-hidden flex flex-col group">
-          <div class="relative h-64 overflow-hidden bg-emerald-950">
-            <img 
-              src={post.data.cover || "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1600&auto=format&fit=crop"} 
-              alt={post.data.coverAlt || post.data.title}
+    <img 
+              src="cartel"} 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
             />
-            <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md text-emerald-300 text-xs font-bold px-3 py-1 rounded-full border border-emerald-600/50">
-              {post.data.pubDate}
-            </div>
-          </div>
-          <div class="p-8 flex flex-col justify-between flex-grow">
-            <div>
-              <h3 class="text-2xl font-bold text-emerald-950 mb-3 group-hover:text-emerald-700 transition-colors leading-snug">
-                <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-              </h3>
-              <p class="text-stone-600 text-base line-clamp-3 mb-6 leading-relaxed">
-                {post.data.description}
-              </p>
-            </div>
-            <a href={`/blog/${post.slug}`} class="inline-flex items-center text-emerald-800 font-bold text-sm hover:text-emerald-600 transition-colors mt-auto">
-              Leer artículo completo →
-            </a>
-          </div>
-        </article>
-      ))}
-    </div>
+
+    
   </main>
 
   <footer class="bg-stone-900 text-stone-300 py-10 border-t border-emerald-800">
     <div class="max-w-5xl mx-auto px-6 text-center text-sm">
       <p class="font-medium text-emerald-400 mb-1">Carrera Cinturón Verde de Córdoba</p>
-      <p class="text-stone-500">© {new Date().getFullYear()} HTML Estático Optimizado para SEO en Vercel.</p>
+      <p class="text-stone-500">© {new Date().getFullYear()}</p>
     </div>
   </footer>
 
